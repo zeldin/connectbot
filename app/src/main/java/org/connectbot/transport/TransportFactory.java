@@ -39,6 +39,7 @@ public class TransportFactory {
 		SSH.getProtocolName(),
 		Telnet.getProtocolName(),
 		Local.getProtocolName(),
+		USBSerial.getProtocolName(),
 	};
 
 	/**
@@ -52,6 +53,8 @@ public class TransportFactory {
 			return new Telnet();
 		} else if (Local.getProtocolName().equals(protocol)) {
 			return new Local();
+		} else if (USBSerial.getProtocolName().equals(protocol)) {
+			return new USBSerial();
 		} else {
 			return null;
 		}
@@ -68,7 +71,9 @@ public class TransportFactory {
 		else if (Local.getProtocolName().equals(scheme)) {
 			Log.d("TransportFactory", "Got to the local parsing area");
 			return Local.getUri(input);
-		} else
+		} else if (USBSerial.getProtocolName().equals(scheme))
+			return USBSerial.getUri(input);
+		else
 			return null;
 	}
 
@@ -104,6 +109,8 @@ public class TransportFactory {
 			return Telnet.getFormatHint(context);
 		} else if (Local.getProtocolName().equals(protocol)) {
 			return Local.getFormatHint(context);
+		} else if (USBSerial.getProtocolName().equals(protocol)) {
+			return USBSerial.getFormatHint(context);
 		} else {
 			return AbsTransport.getFormatHint(context);
 		}

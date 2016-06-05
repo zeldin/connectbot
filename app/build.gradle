@@ -21,10 +21,14 @@ repositories {
     maven {
         url 'https://dl.bintray.com/connectbot/maven'
     }
+    maven {
+	url 'https://jitpack.io'
+    }
 }
 
 dependencies {
     compile 'org.connectbot:sshlib:2.2.0'
+    compile 'com.github.felHR85:UsbSerial:4.3'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
@@ -41,7 +45,7 @@ android {
 
     defaultConfig {
         applicationId "org.connectbot"
-        minSdkVersion 4
+        minSdkVersion 12
         targetSdkVersion 22
 
         ndk {

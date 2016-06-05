@@ -552,4 +552,12 @@
 	<string name="button_key_ctrl">Ctrl</string>
 	<!-- Text for the "Tab" button in virtual keyboard. -->
 	<string name="button_key_tab">Tab</string>
+
+	<string name="hostpref_baudrate">Baudrate</string>
+	<string name="serial_device_unavailable">No supported serial device found</string>
+	<string name="serial_device_pending_permission">Waiting for device persmission…</string>
+	<string name="serial_device_open_failed">Failed to open serial device</string>
+	<string name="serial_device_permission_granted">Device permission granted</string>
+	<string name="serial_device_permission_denied">Device permission denied</string>
+
 </resources>
